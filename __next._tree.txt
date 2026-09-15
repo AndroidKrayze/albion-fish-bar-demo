@@ -1,0 +1,4 @@
+:HL["/albion-fish-bar-demo/_next/static/chunks/38sell1_2ht9p.css","style"]
+:HL["/albion-fish-bar-demo/_next/static/media/f7aa21714c1c53f8-s.p.0-95eo-012xnf.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/albion-fish-bar-demo/_next/static/media/fabcf92ba1ccea36-s.p.1w_qz2ahumqmz.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"t_Zd3UHcNNNlX0JUzgzz7"}
