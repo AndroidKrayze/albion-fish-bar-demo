@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #071a2f;
+  --navy-deep: #040f1c;
+  --navy-mid: #0e2a4a;
+  --navy-lift: #163a5c;
+  --batter: #d4a017;
+  --batter-bright: #e8b82a;
+  --batter-deep: #a67c0f;
+  --foam: #e8eef5;
+  --mist: #c5d0de;
+  --ink: #f4f7fb;
+  --wash: rgba(7, 26, 47, 0.72);
+  --wash-strong: rgba(4, 15, 28, 0.82);
+  --background: var(--foam);
+  --foreground: var(--navy);
+  --font-display: var(--font-bebas);
+  --font-body: var(--font-figtree);
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-mid: var(--navy-mid);
+  --color-navy-lift: var(--navy-lift);
+  --color-batter: var(--batter);
+  --color-batter-bright: var(--batter-bright);
+  --color-batter-deep: var(--batter-deep);
+  --color-foam: var(--foam);
+  --color-mist: var(--mist);
+  --color-ink: var(--ink);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(212, 160, 23, 0.12), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(14, 42, 74, 0.1), transparent 50%),
+    linear-gradient(180deg, #dfe7f1 0%, var(--foam) 28%, #edf2f7 100%);
+  color: var(--foreground);
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+}
+
+::selection {
+  background: var(--batter);
+  color: var(--navy-deep);
+}
+
+.font-display {
+  font-family: var(--font-bebas), Impact, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.opacity-wash {
+  background:
+    linear-gradient(
+      105deg,
+      var(--wash-strong) 0%,
+      var(--wash) 42%,
+      rgba(7, 26, 47, 0.45) 72%,
+      rgba(7, 26, 47, 0.28) 100%
+    ),
+    linear-gradient(to top, rgba(4, 15, 28, 0.75) 0%, transparent 42%);
+}
+
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.menu-rule {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--mist) 0,
+    var(--mist) 4px,
+    transparent 4px,
+    transparent 10px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
