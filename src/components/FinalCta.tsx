@@ -1,4 +1,3 @@
-import { withBase } from "@/lib/paths";
 import { site } from "@/lib/site";
 import { Reveal } from "./motion";
 
@@ -28,29 +27,33 @@ export function FinalCta() {
   );
 }
 
+const SUGGESTED_DOMAINS = [
+  "albionchippy.co.uk",
+  "albionfishse16.co.uk",
+  "rotherhithefishbar.co.uk",
+] as const;
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-white/10 bg-navy-deep px-5 py-10 text-sm text-foam/65 md:px-8">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="font-display text-2xl tracking-[0.06em] text-ink">
             {site.name}
           </p>
-          <p className="mt-1">Marketing demo · not an official online shop.</p>
-        </div>
-        <div className="space-y-1 md:text-right">
-          <p>
+          <p className="mt-1">{site.addressLines.join(", ")}</p>
+          <p className="mt-1">
             <a href={site.phoneHref} className="hover:text-batter">
               {site.phoneDisplay}
             </a>
           </p>
-          <p>{site.addressLines.join(", ")}</p>
-          <p className="pt-2 text-xs text-foam/45">
-            Photo credits in{" "}
-            <a href={withBase("/SOURCES.md")} className="underline hover:text-batter">
-              SOURCES.md
-            </a>
-            . Never redirects to third-party spam domains.
+        </div>
+        <div className="md:text-right">
+          <p className="text-xs uppercase tracking-[0.18em] text-foam/45">
+            Suggested domains
+          </p>
+          <p className="mt-2 text-foam/70">
+            {SUGGESTED_DOMAINS.join(" · ")}
           </p>
         </div>
       </div>
